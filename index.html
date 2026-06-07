@@ -217,6 +217,19 @@
 
     /* ---- proof cards ---- */
     .own-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    /* track-record stat band */
+    .statband{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .stat{padding:26px 22px;border-radius:18px;border:1px solid var(--line-soft);background:rgba(244,234,210,.03)}
+    .stat b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(2.7rem,5vw,4.2rem);line-height:.86;letter-spacing:-.04em;color:var(--brass)}
+    .stat b em{font-style:normal;font-size:.45em;color:var(--parchment);letter-spacing:0}
+    .stat span{display:block;margin-top:12px;font:700 .6rem/1.45 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--parchment)}
+    .stat-note{margin:22px auto 0;max-width:60ch;text-align:center;font-size:.98rem;line-height:1.56;color:var(--paper-shadow)}
+    .stat-note em{font-style:normal;color:var(--cream)}
+    @media(max-width:900px){.statband{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.statband{grid-template-columns:1fr}}
+    /* forward path step */
+    .step small{color:var(--brass)}
+    .step .ph-num{font-family:var(--serif);font-weight:900}
     .proof-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(18px,3vw,26px);align-items:start}
     .proof-hero{padding:34px;border-radius:30px;background:linear-gradient(180deg,rgba(244,234,210,.06),rgba(244,234,210,.02));border:1px solid var(--line-soft);box-shadow:0 24px 70px rgba(0,0,0,.3)}
     .proof-hero h3{margin:14px 0 12px;font-family:var(--serif);font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.9;letter-spacing:-.04em;color:#fff;max-width:14ch}
@@ -319,7 +332,7 @@
     <a class="chapter-dot" href="#journey" data-target="journey"><span>Journey</span></a>
     <a class="chapter-dot" href="#artifacts" data-target="artifacts"><span>Artifacts</span></a>
     <a class="chapter-dot" href="#builder" data-target="builder"><span>Builder</span></a>
-    <a class="chapter-dot" href="#safari" data-target="safari"><span>Safari Golf</span></a>
+    <a class="chapter-dot" href="#safari" data-target="safari"><span>Forward</span></a>
     <a class="chapter-dot" href="#next" data-target="next"><span>Next</span></a>
   </div>
 
@@ -336,7 +349,7 @@
         <a href="#product">Product</a>
         <a href="#artifacts">Artifacts</a>
         <a href="#builder">The builder</a>
-        <a href="#safari">Safari Golf</a>
+        <a href="#safari">What's next</a>
         <a class="nav-cta" href="#next">Next step</a>
       </div>
     </nav>
@@ -479,19 +492,33 @@
         </div>
       </section>
 
-      <!-- ACT 7 — WHAT SAFARI GOLF DALLAS COULD OWN -->
+      <!-- ACT 6b — TRACK RECORD (the work behind it) -->
+      <section class="section container">
+        <div style="text-align:center;margin-bottom:30px" data-reveal>
+          <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The work behind it</div>
+        </div>
+        <div class="statband" data-reveal>
+          <div class="stat"><b>70</b><span>Builds shipped<br/>to the stores</span></div>
+          <div class="stat"><b>4</b><span>Major versions<br/>refined</span></div>
+          <div class="stat"><b>2</b><span>Native apps<br/>iOS &amp; Android</span></div>
+          <div class="stat"><b>55<em>+</em></b><span>QA runs<br/>before release</span></div>
+        </div>
+        <p class="stat-note" data-reveal>This didn't arrive in a sprint. Golf Safari was rebuilt from a retired prototype into a native product — broken and rebuilt across dozens of store builds until it held a standard worth standing behind. <em>That discipline is what the partnership brings forward.</em></p>
+      </section>
+
+      <!-- ACT 7 — WHAT THE PARTNERSHIP UNLOCKS -->
       <section class="section container rule" id="safari" data-chapter="safari">
         <div class="section-head">
           <div data-reveal>
-            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The opportunity</div>
-            <h2>What Safari Golf Dallas could own.</h2>
+            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> What it unlocks</div>
+            <h2>What the partnership opens up.</h2>
           </div>
-          <p class="lede" data-reveal>The same standard, extended past the app — Dallas first, ready to scale across Safari.</p>
+          <p class="lede" data-reveal>One standard, three moves — start in Dallas, then carry it across Safari.</p>
         </div>
         <div class="own-grid">
-          <article class="pccard" data-reveal><small>01 · Front door</small><strong>One official home for the day.</strong><p>The daily brief, the live field, the next move — better than a feed or a static schedule.</p></article>
-          <article class="pccard" data-reveal><small>02 · Tournaments</small><strong>Events that feel official.</strong><p>Join, check in, leagues, waitlists — participation without the chaos.</p></article>
-          <article class="pccard" data-reveal><small>03 · Identity &amp; growth</small><strong>Trust, memory, and premium.</strong><p>Safari Index, the 19th Hole, and sponsor-ready moments — room to grow without losing the feel.</p></article>
+          <article class="pccard step" data-reveal><small>Now · Dallas</small><strong>The official digital home of Safari Golf Dallas.</strong><p>The daily brief, the live field, tournaments — one place the club runs on.</p></article>
+          <article class="pccard step" data-reveal><small>Next · The full experience</small><strong>Website, member identity, and sponsor-ready premium.</strong><p>Every touchpoint, on and off the course, under one standard.</p></article>
+          <article class="pccard step" data-reveal><small>Then · Across Safari</small><strong>The same standard, the next organization.</strong><p>Prove it in Dallas, then carry it to the next Safari chapter — and the next.</p></article>
         </div>
       </section>
 
