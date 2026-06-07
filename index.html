@@ -9,10 +9,10 @@
   <meta property="og:title" content="Golf Safari × Ni Biashara — Safari Golf Dallas" />
   <meta property="og:description" content="A private partnership brief for Safari Golf Dallas leadership: the real product, the builder, and the case for Ni Biashara as technology partner." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/dallas/IMG_5589.jpg" />
+  <meta property="og:image" content="assets/dallas/IMG_3419.jpg" />
   <meta name="theme-color" content="#050C1D" />
-  <link rel="icon" type="image/png" href="assets/crest.png" />
-  <link rel="apple-touch-icon" href="assets/crest.png" />
+  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -109,7 +109,7 @@
     body.rolling .bar{height:3.2vh}
     .coldopen-inner{position:relative;z-index:4;text-align:center;padding:0 22px;max-width:1040px;opacity:0;transform:translateY(16px);animation:fadeUp 1.1s .35s ease forwards}
     @keyframes fadeUp{to{opacity:1;transform:none}}
-    .coldopen .crest{width:84px;height:84px;margin:0 auto 22px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.5))}
+    .coldopen .crest{width:92px;height:92px;margin:0 auto 22px;border-radius:21px;filter:drop-shadow(0 16px 34px rgba(0,0,0,.55))}
     .coldopen .eyebrow{font:700 .62rem/1.4 var(--mono);letter-spacing:.34em;text-transform:uppercase;color:#e7c97c;text-shadow:0 1px 14px rgba(3,6,13,.85)}
     .coldopen h1{margin:18px auto 0;max-width:16ch;font-family:var(--serif);font-weight:900;font-size:clamp(2.5rem,6vw,5.4rem);line-height:.92;letter-spacing:-.035em;color:#fff;text-wrap:balance;text-shadow:0 2px 26px rgba(3,6,13,.6)}
     .coldopen h1 em{font-style:italic;font-weight:500;color:var(--brass)}
@@ -129,7 +129,7 @@
 
     /* ---- logline ---- */
     .logline{position:relative;text-align:center;padding:clamp(96px,13vw,170px) 0}
-    .logline .crest{width:62px;height:62px;margin:0 auto 26px}
+    .logline .crest{width:66px;height:66px;margin:0 auto 26px;border-radius:15px;box-shadow:0 14px 30px rgba(0,0,0,.45)}
     .logline p{margin:0 auto;max-width:18ch;font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,6.4vw,6rem);line-height:.92;letter-spacing:-.05em;color:#fff;text-wrap:balance}
     .logline p em{font-style:italic;font-weight:500;color:var(--brass)}
     .logline .tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px}
@@ -207,6 +207,8 @@
     .proofline .pr span{font-size:.94rem;line-height:1.46;color:var(--parchment)}
     .proofline .pr span strong{color:var(--cream)}
     .builder-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+    .builder-photo{margin:0}
+    .ph.solo{aspect-ratio:4/5}
     .ph{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-soft);box-shadow:0 22px 54px rgba(0,0,0,.45)}
     .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.97) contrast(1.03)}
     .ph.lead{grid-column:1 / -1;aspect-ratio:16/10}
@@ -214,6 +216,7 @@
     .ph .cap{position:absolute;left:12px;bottom:11px;padding:7px 11px;border-radius:9px;background:rgba(5,8,13,.72);border:1px solid var(--line-soft);font:700 .52rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
 
     /* ---- proof cards ---- */
+    .own-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
     .proof-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:clamp(18px,3vw,26px);align-items:start}
     .proof-hero{padding:34px;border-radius:30px;background:linear-gradient(180deg,rgba(244,234,210,.06),rgba(244,234,210,.02));border:1px solid var(--line-soft);box-shadow:0 24px 70px rgba(0,0,0,.3)}
     .proof-hero h3{margin:14px 0 12px;font-family:var(--serif);font-weight:900;font-size:clamp(2rem,4vw,3.4rem);line-height:.9;letter-spacing:-.04em;color:#fff;max-width:14ch}
@@ -247,7 +250,7 @@
     [data-reveal].is-visible{opacity:1;transform:none}
 
     @media (max-width:1080px){
-      .section-head,.triptych,.artifact,.builder-grid,.proof-grid,.close-inner{grid-template-columns:1fr}
+      .section-head,.triptych,.artifact,.builder-grid,.proof-grid,.close-inner,.own-grid{grid-template-columns:1fr}
       .triptych{max-width:520px;margin-inline:auto}
       .artifact-stage{position:relative;top:auto}
       .chapter-rail{display:none}
@@ -323,7 +326,7 @@
   <div class="shell">
     <nav class="nav" aria-label="Main">
       <a class="brand" href="#open" aria-label="Ni Biashara and Golf Safari">
-        <img src="assets/crest.png" alt="Golf Safari crest" />
+        <img src="assets/app-icon.png" alt="Golf Safari logo" />
         <div class="brand-copy">
           <strong>Golf Safari × Ni Biashara</strong>
           <span>Safari Golf Dallas · Partnership Brief</span>
@@ -345,7 +348,7 @@
         <div class="bar top" aria-hidden="true"></div>
         <div class="bar bottom" aria-hidden="true"></div>
         <div class="coldopen-inner">
-          <img class="crest" src="assets/crest.png" alt="Golf Safari crest" />
+          <img class="crest" src="assets/app-icon.png" alt="Golf Safari logo" />
           <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Private brief · for DK &amp; Safari Golf Dallas</div>
           <h1>The product is already real. <em>The standard is already here.</em></h1>
           <p class="sub">A short, honest look at Golf Safari — and the case for Ni Biashara as the technology partner Safari Golf Dallas builds its digital home with.</p>
@@ -355,7 +358,7 @@
 
       <!-- ACT 2 — THESIS / LOGLINE -->
       <section class="logline container" id="thesis" data-chapter="thesis">
-        <img class="crest" src="assets/crest.png" alt="" data-reveal />
+        <img class="crest" src="assets/app-icon.png" alt="" data-reveal />
         <p data-reveal>Golf Safari already feels like golf. <em>Safari Golf Dallas deserves the system.</em></p>
         <div class="tags" data-reveal>
           <span class="pill">Live on the App Store · v4.0.6</span>
@@ -395,36 +398,26 @@
           <div class="hz-caption">How the product earned its voice</div>
           <div class="hz-track">
             <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Phase 01 · The caddie</small><h3>One golfer. One hole. One decision.</h3><p>It started intimate and precise — wind, club, lie, pin. Useful before it ever tried to be big.</p><div class="hz-take">Utility came first</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v1.png" alt="Early Golf Safari round screen" loading="lazy" /></figure><div class="hz-note"><strong>What it was</strong><span>A calm, tactical golf companion — shot by shot.</span></div></div>
+              <div class="hz-copy"><small>Then · The caddie</small><h3>It started as a caddie.</h3><p>Wind, club, lie, pin — intimate and precise, useful before it tried to be big.</p></div>
+              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v1.png" alt="Early Golf Safari round screen" loading="lazy" /></figure></div>
             </div></article>
             <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Phase 02 · The field</small><h3>Then the field showed up.</h3><p>Join, check in, play, lounge. The product widened from one player's tool into a real event experience.</p><div class="hz-take">A tool became an organization</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v2.png" alt="Golf Safari compete history screen" loading="lazy" /></figure><div class="hz-note"><strong>What changed</strong><span>Weekly play needed rhythm, not just design.</span></div></div>
+              <div class="hz-copy"><small>Next · The club</small><h3>It grew into a club.</h3><p>Fields, identity, belonging — the tool became something a community comes back to.</p></div>
+              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v3.png" alt="Golf Safari player identity history screen" loading="lazy" /></figure></div>
             </div></article>
             <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Phase 03 · The player</small><h3>The golfer stopped being anonymous.</h3><p>Safari Index, local pride, archetype. Identity became part of why people come back.</p><div class="hz-take">Software started carrying belonging</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v3.png" alt="Golf Safari player identity history screen" loading="lazy" /></figure><div class="hz-note"><strong>Why it matters</strong><span>Identity opens the door to trust, tiers, and recognition.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Phase 04 · The ritual</small><h3>The home screen became a daily briefing.</h3><p>Position, rivalry, next action, coaching tone. The day itself became the product moment.</p><div class="hz-take">From feature set to a world</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v4.png" alt="Golf Safari Today history screen" loading="lazy" /></figure><div class="hz-note"><strong>Turning point</strong><span>This is where it started reading as a place, not a screen.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Phase 05 · The system</small><h3>Now every part has a clear role and a clear feel.</h3><p>Wire, program, yardage book, record book, locker, 19th Hole — one complete golf experience.</p><div class="hz-take">A standard, not a screen pile</div></div>
-              <div class="hz-media wide"><figure class="hz-desktop"><img src="assets/golf-safari-landing-desktop.png" alt="Golf Safari web front door" loading="lazy" /></figure><div class="hz-note"><strong>Where it points</strong><span>Enough character to anchor a wider Safari Golf presence.</span></div></div>
+              <div class="hz-copy"><small>Now · The system</small><h3>Now it's a complete system.</h3><p>Wire, program, yardage book, record book, locker, 19th Hole — one golf experience.</p></div>
+              <div class="hz-media wide"><figure class="hz-desktop"><img src="assets/golf-safari-landing-desktop.png" alt="Golf Safari web front door" loading="lazy" /></figure></div>
             </div></article>
           </div>
           <div class="hz-progress"><i></i></div>
         </div>
         <!-- mobile swipe fallback -->
         <div class="reel-mobile">
-          <div class="rm-head"><small>How the product earned its voice</small><h3>Five phases, one product.</h3><p>Swipe through the real builds — caddie, field, player, ritual, system.</p></div>
+          <div class="rm-head"><small>How it grew</small><h3>Caddie → club → system.</h3><p>From one decisive screen to a complete golf experience.</p></div>
           <div class="rm-rail">
             <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v1.png" alt="Early round screen" loading="lazy" /></div><strong>The caddie</strong><span>One golfer, one hole, one decision.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v2.png" alt="Compete history" loading="lazy" /></div><strong>The field</strong><span>A tool became an organization.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v3.png" alt="Identity history" loading="lazy" /></div><strong>The player</strong><span>Identity became part of the product.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v4.png" alt="Today history" loading="lazy" /></div><strong>The ritual</strong><span>The day became the moment.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v3.png" alt="Identity history" loading="lazy" /></div><strong>The club</strong><span>Identity and belonging.</span></article>
             <article class="rm-card"><div class="rm-shot wide"><img src="assets/golf-safari-landing-desktop.png" alt="Web front door" loading="lazy" /></div><strong>The system</strong><span>One complete golf experience.</span></article>
           </div>
         </div>
@@ -474,60 +467,31 @@
         <div class="builder-grid">
           <div class="builder-copy" data-reveal>
             <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Who's behind it</div>
-            <h2>Built from inside the community — not pitched at it.</h2>
-            <p>Golf Safari wasn't designed by an outside vendor studying golf from a deck. It comes from inside the same world Safari Golf Dallas lives in — the early mornings, the rivalries, the after-round table.</p>
-            <p>The name carries it: <em>Safari</em> is heritage and home, the thread from Nairobi to the fairways of Dallas. That point of view is why the product feels like golf instead of like generic software with a golf skin.</p>
+            <h2>Built from inside the community.</h2>
+            <p>Golf Safari wasn't built by an outside vendor studying golf from a deck — it comes from inside the same Safari Golf Dallas world. <em>Safari</em> is the thread from Nairobi to the fairways of Dallas, and it's why the product feels like golf, not software with a golf skin.</p>
             <div class="proofline">
-              <div class="pr"><b>2×</b><span><strong>Shipped, not promised.</strong> Native iOS &amp; Android — live on the App Store at v4.0.6, on Google Play in production.</span></div>
-              <div class="pr"><b>6</b><span><strong>Bespoke surfaces.</strong> Every tab is its own artifact — broadsheet, program, yardage book, record book, locker, 19th Hole. Nothing default.</span></div>
-              <div class="pr"><b>1</b><span><strong>One standard, end to end.</strong> Ni Biashara holds product, web, and delivery — so the experience stays coherent as it grows.</span></div>
+              <div class="pr"><b>2×</b><span><strong>Shipped, not promised.</strong> Native iOS &amp; Android, live at v4.0.6.</span></div>
+              <div class="pr"><b>6</b><span><strong>Bespoke surfaces.</strong> Every tab is its own artifact. Nothing default.</span></div>
+              <div class="pr"><b>1</b><span><strong>One standard.</strong> Product, web, and delivery — coherent as it grows.</span></div>
             </div>
           </div>
-          <div class="builder-photos" data-reveal>
-            <figure class="ph lead"><img src="assets/dallas/IMG_5589.jpg" alt="Players on the tee at a Safari Dallas Golf Club event" loading="lazy" /><figcaption class="cap">Safari Dallas Golf Club · on the tee</figcaption></figure>
-            <figure class="ph tall"><img src="assets/dallas/IMG_3419.jpg" alt="Two members celebrating on the green" loading="lazy" /></figure>
-            <figure class="ph tall"><img src="assets/dallas/IMG_3409.jpg" alt="A member lining up on the green" loading="lazy" /></figure>
-          </div>
+          <figure class="builder-photo ph solo" data-reveal><img src="assets/dallas/IMG_3419.jpg" alt="Safari Golf Dallas members on the course" loading="lazy" /></figure>
         </div>
       </section>
 
-      <!-- ACT 7 — WHAT SAFARI GOLF COULD OWN (horizontal reel) -->
-      <section class="hz-zone" id="safari" data-chapter="safari" data-axis="horizontal">
-        <div class="hz-sticky">
-          <div class="hz-caption">What Safari Golf Dallas could officially own</div>
-          <div class="hz-track">
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Front door</small><h3>Own the first look of the day.</h3><p>A daily brief, the live field, the next move — a signature touchpoint better than another feed or a static schedule page.</p><div class="hz-take">A recognizable daily home</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/screens/today.png" alt="Golf Safari Morning Wire" loading="lazy" /></figure><div class="hz-note"><strong>Use case</strong><span>Daily ritual and live event framing.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Tournament operations</small><h3>Run events like they matter.</h3><p>Join, check in, play, waitlist, league. When the tournament experience feels official, the organization feels official too.</p><div class="hz-take">Less chaos around participation</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/screens/compete.png" alt="Golf Safari tournament program" loading="lazy" /></figure><div class="hz-note"><strong>Use case</strong><span>Weekly opens, chapter games, hosted &amp; sponsor days.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Trust &amp; identity</small><h3>Turn identity into trust.</h3><p>Safari Index, progress, and local belonging become how the community understands reputation and commitment.</p><div class="hz-take">A cleaner path to tiers &amp; recognition</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/screens/you.png" alt="Golf Safari locker room" loading="lazy" /></figure><div class="hz-note"><strong>Use case</strong><span>Trusted matchups, recognizable members, sponsor segments.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Community memory</small><h3>Keep the story alive after the round.</h3><p>The 19th Hole is where recap, rivalry, and rematch energy stay attached to the community instead of vanishing at the last putt.</p><div class="hz-take">A social layer without the noise</div></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/screens/nineteenth.png" alt="Golf Safari 19th Hole" loading="lazy" /></figure><div class="hz-note"><strong>Use case</strong><span>Highlights, rematches, clubhouse culture.</span></div></div>
-            </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Premium expansion</small><h3>Grow without losing the golf feel.</h3><p>Website, sponsor experiences, travel and chapter growth — all building on the design language already in place instead of starting over.</p><div class="hz-take">Product, community &amp; sponsor in one direction</div></div>
-              <div class="hz-media"><div class="hz-photo"><img src="assets/dallas/IMG_5728.jpg" alt="A Safari Golf member celebrating a putt" loading="lazy" /></div><div class="hz-note"><strong>Use case</strong><span>Official site, sponsor storytelling, destination golf.</span></div></div>
-            </div></article>
+      <!-- ACT 7 — WHAT SAFARI GOLF DALLAS COULD OWN -->
+      <section class="section container rule" id="safari" data-chapter="safari">
+        <div class="section-head">
+          <div data-reveal>
+            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The opportunity</div>
+            <h2>What Safari Golf Dallas could own.</h2>
           </div>
-          <div class="hz-progress"><i></i></div>
+          <p class="lede" data-reveal>The same standard, extended past the app — Dallas first, ready to scale across Safari.</p>
         </div>
-        <div class="reel-mobile">
-          <div class="rm-head"><small>What Safari Golf Dallas could own</small><h3>Five places to lead.</h3><p>Front door, tournaments, identity, the 19th Hole, and premium growth.</p></div>
-          <div class="rm-rail">
-            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/today.png" alt="Front door" loading="lazy" /></div><strong>Front door</strong><span>Own the first look of the day.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/compete.png" alt="Tournaments" loading="lazy" /></div><strong>Tournaments</strong><span>Run events like they matter.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/you.png" alt="Identity" loading="lazy" /></div><strong>Identity</strong><span>Turn identity into trust.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/nineteenth.png" alt="19th Hole" loading="lazy" /></div><strong>19th Hole</strong><span>Keep the story alive.</span></article>
-            <article class="rm-card"><div class="rm-shot wide"><img src="assets/dallas/IMG_5728.jpg" alt="Premium growth" loading="lazy" /></div><strong>Premium</strong><span>Grow without losing the feel.</span></article>
-          </div>
+        <div class="own-grid">
+          <article class="pccard" data-reveal><small>01 · Front door</small><strong>One official home for the day.</strong><p>The daily brief, the live field, the next move — better than a feed or a static schedule.</p></article>
+          <article class="pccard" data-reveal><small>02 · Tournaments</small><strong>Events that feel official.</strong><p>Join, check in, leagues, waitlists — participation without the chaos.</p></article>
+          <article class="pccard" data-reveal><small>03 · Identity &amp; growth</small><strong>Trust, memory, and premium.</strong><p>Safari Index, the 19th Hole, and sponsor-ready moments — room to grow without losing the feel.</p></article>
         </div>
       </section>
 
@@ -538,25 +502,22 @@
             <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Why Ni Biashara</div>
             <h2>The right partner makes Safari Golf feel complete.</h2>
           </div>
-          <p class="lede" data-reveal>Not generic marketing wrapped around an app — a partner that holds the product standard, the website, and the delivery without flattening what makes it special.</p>
+          <p class="lede" data-reveal>A partner that holds the product standard, the website, and the delivery — without flattening what makes it special.</p>
         </div>
         <div class="proof-grid">
           <div class="proof-hero" data-reveal>
             <small style="font:700 .6rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass)">The case for partnership</small>
-            <h3>If this is the standard of the product today, imagine the standard of the organization tomorrow.</h3>
-            <p>Ni Biashara preserves what already feels special, then extends it into Safari Golf's website, tournament experience, member identity, and premium growth — starting with Dallas, ready to scale across Safari.</p>
+            <h3>If this is the product today, imagine the organization tomorrow.</h3>
             <div class="proof-band">
               <span class="pill">Official digital home</span>
               <span class="pill">Tournament experience</span>
-              <span class="pill">Member identity</span>
-              <span class="pill">Community story</span>
-              <span class="pill">Sponsor-ready moments</span>
+              <span class="pill">Member identity &amp; growth</span>
             </div>
           </div>
           <div class="proof-rail">
-            <article class="pccard" data-reveal><small>One partner</small><strong>Product, website, and the wider Safari Golf presence under one standard.</strong><p>Help the organization feel more complete and more official — without losing what people already respond to.</p></article>
-            <article class="pccard" data-reveal><small>Design judgment</small><strong>We preserve what makes a product distinctive instead of sanding it into generic sports software.</strong><p>Golf Safari already has a strong golf voice; the job is to expand it without flattening it.</p></article>
-            <article class="pccard" data-reveal><small>Delivery</small><strong>Good ideas become working experiences, polished details, and verified quality.</strong><p>That's how trust is earned when the product represents a community and a serious organization.</p></article>
+            <article class="pccard" data-reveal><small>One partner</small><strong>Product, website, and the wider Safari Golf presence under one standard.</strong></article>
+            <article class="pccard" data-reveal><small>Design judgment</small><strong>We expand what makes the product distinctive — never sand it into generic sports software.</strong></article>
+            <article class="pccard" data-reveal><small>Delivery</small><strong>Ideas become working experiences, polished details, and verified quality.</strong></article>
           </div>
         </div>
       </section>
@@ -564,12 +525,12 @@
       <!-- ACT 9 — CLOSE -->
       <section class="section container" id="next" data-chapter="next">
         <div class="close" data-reveal>
-          <div class="close-photo" aria-hidden="true"><img src="assets/dallas/IMG_3419.jpg" alt="" loading="lazy" /></div>
+          <div class="close-photo" aria-hidden="true"><img src="assets/dallas/IMG_5728.jpg" alt="" loading="lazy" /></div>
           <div class="close-inner">
             <div>
               <small>Next step</small>
               <h2>Make it official.</h2>
-              <p>Confirm Ni Biashara as Safari Golf Dallas's technology partner, agree the first scope of work, and start building the digital experience the organization can confidently stand behind.</p>
+              <p>Confirm Ni Biashara as Safari Golf Dallas's technology partner, agree the first scope, and start building.</p>
             </div>
             <div class="close-actions">
               <a class="btn btn-primary" href="mailto:twe@nibiashara.biz?subject=Safari%20Golf%20Dallas%20%E2%80%94%20Technology%20Partnership">Email twe@nibiashara.biz</a>
