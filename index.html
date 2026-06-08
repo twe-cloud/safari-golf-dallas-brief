@@ -129,7 +129,7 @@
 
     /* ---- logline ---- */
     .logline{position:relative;text-align:center;padding:clamp(96px,13vw,170px) 0}
-    .logline .crest{width:66px;height:66px;margin:0 auto 26px;border-radius:15px;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+    .logline .crest{width:72px;height:72px;margin:0 auto 26px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.5))}
     .logline p{margin:0 auto;max-width:18ch;font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,6.4vw,6rem);line-height:.92;letter-spacing:-.05em;color:#fff;text-wrap:balance}
     .logline p em{font-style:italic;font-weight:500;color:var(--brass)}
     .logline .tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:34px}
@@ -176,6 +176,20 @@
     .hz-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brass),#e7c97c,var(--ember))}
     .hz-caption{position:absolute;right:24px;top:calc(var(--nav-offset) + 16px);z-index:8;font:700 .56rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-shadow)}
     .reel-mobile{display:none}
+    /* journey filmstrip — phone screens are the hero, parading L→R */
+    .film-zone .hz-track{align-items:center;gap:clamp(20px,2.4vw,40px)}
+    .film-zone .hz-panel{flex:0 0 min(360px,74vw);height:auto;padding:calc(var(--nav-offset) + 26px) 0 44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px}
+    .film-zone .hz-panel.film-lead{flex-basis:min(520px,84vw);align-items:flex-start}
+    .film-intro{padding:0 8px}
+    .film-intro small{display:block;font:700 .6rem/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+    .film-intro h3{margin:16px 0 14px;font-family:var(--serif);font-weight:900;font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:.92;letter-spacing:-.04em;color:#fff;max-width:14ch;text-wrap:balance}
+    .film-intro p{margin:0;max-width:38ch;font-size:1rem;line-height:1.56;color:var(--parchment)}
+    .film-screen{width:min(100%,300px);aspect-ratio:644/1400;border-radius:34px;overflow:hidden;background:#000;border:1px solid rgba(244,234,210,.18);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+    .film-screen img{width:100%;height:100%;object-fit:cover;object-position:top center}
+    .film-cap{text-align:center;max-width:30ch}
+    .film-cap small{display:block;font:700 .58rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+    .film-cap strong{display:block;margin:10px 0 6px;font-family:var(--serif);font-weight:900;font-size:clamp(1.25rem,1.9vw,1.65rem);line-height:1.05;letter-spacing:-.02em;color:#fff}
+    .film-cap span{font-size:.92rem;line-height:1.5;color:var(--parchment)}
 
     /* ---- artifact viewer ---- */
     .artifact{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start}
@@ -281,10 +295,10 @@
       .hz-screen{width:min(100%,210px)}
       .hz-caption,.hz-progress{display:none}
       .builder-photos{grid-template-columns:1fr 1fr}
-      /* journey + safari reels become swipe rails on small screens */
-      #journey .hz-sticky,#safari .hz-sticky{position:relative;height:auto;overflow:visible}
-      #journey .hz-track,#safari .hz-track{display:none}
-      #journey,#safari{height:auto !important}
+      /* screens + safari reels become swipe rails on small screens */
+      #screens .hz-sticky,#safari .hz-sticky{position:relative;height:auto;overflow:visible}
+      #screens .hz-track,#safari .hz-track{display:none}
+      #screens,#safari{height:auto !important}
       .reel-mobile{display:block;padding:calc(var(--nav-offset) + 12px) 15px 26px}
       .reel-mobile .rm-head h3{font-family:var(--serif);font-weight:900;font-size:clamp(2rem,8vw,3rem);line-height:.92;margin:8px 0 6px;color:#fff}
       .reel-mobile .rm-head small{font:700 .58rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
@@ -328,10 +342,9 @@
   <div class="chapter-rail" aria-hidden="true">
     <a class="chapter-dot is-active" href="#open" data-target="open"><span>Open</span></a>
     <a class="chapter-dot" href="#thesis" data-target="thesis"><span>Thesis</span></a>
-    <a class="chapter-dot" href="#product" data-target="product"><span>Product</span></a>
-    <a class="chapter-dot" href="#journey" data-target="journey"><span>Journey</span></a>
-    <a class="chapter-dot" href="#artifacts" data-target="artifacts"><span>Artifacts</span></a>
+    <a class="chapter-dot" href="#screens" data-target="screens"><span>Screens</span></a>
     <a class="chapter-dot" href="#builder" data-target="builder"><span>Builder</span></a>
+    <a class="chapter-dot" href="#vision" data-target="vision"><span>Vision</span></a>
     <a class="chapter-dot" href="#safari" data-target="safari"><span>Forward</span></a>
     <a class="chapter-dot" href="#next" data-target="next"><span>Next</span></a>
   </div>
@@ -339,15 +352,14 @@
   <div class="shell">
     <nav class="nav" aria-label="Main">
       <a class="brand" href="#open" aria-label="Ni Biashara and Golf Safari">
-        <img src="assets/app-icon.png" alt="Golf Safari logo" />
+        <img src="assets/logo-mark.png" alt="Golf Safari logo" />
         <div class="brand-copy">
           <strong>Golf Safari × Ni Biashara</strong>
           <span>Safari Golf Dallas · Partnership Brief</span>
         </div>
       </a>
       <div class="nav-links">
-        <a href="#product">Product</a>
-        <a href="#artifacts">Artifacts</a>
+        <a href="#screens">The product</a>
         <a href="#builder">The builder</a>
         <a href="#safari">What's next</a>
         <a class="nav-cta" href="#next">Next step</a>
@@ -361,117 +373,60 @@
         <div class="bar top" aria-hidden="true"></div>
         <div class="bar bottom" aria-hidden="true"></div>
         <div class="coldopen-inner">
-          <img class="crest" src="assets/app-icon.png" alt="Golf Safari logo" />
+          <img class="crest" src="assets/logo-mark.png" alt="Golf Safari logo" />
           <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Private brief · for DK &amp; Safari Golf Dallas</div>
           <h1>The product is already real. <em>The standard is already here.</em></h1>
-          <p class="sub">A short, honest look at Golf Safari — and the case for Ni Biashara as the technology partner Safari Golf Dallas builds its digital home with.</p>
+          <p class="sub">A short, honest look at Golf Safari, and the case for Ni Biashara as the technology partner Safari Golf Dallas builds its digital home with.</p>
         </div>
         <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="rail"></span></div>
       </section>
 
       <!-- ACT 2 — THESIS / LOGLINE -->
       <section class="logline container" id="thesis" data-chapter="thesis">
-        <img class="crest" src="assets/app-icon.png" alt="" data-reveal />
+        <img class="crest" src="assets/logo-mark.png" alt="" data-reveal />
         <p data-reveal>Golf Safari already feels like golf. <em>Safari Golf Dallas deserves the system.</em></p>
         <div class="tags" data-reveal>
-          <span class="pill">Live on the App Store · v4.0.6</span>
-          <span class="pill">Built native — iOS &amp; Android</span>
-          <span class="pill">Not a moodboard — a shipped product</span>
+          <span class="pill">Live on Google Play · v4.0.6</span>
+          <span class="pill">Live on the App Store · v4.0.3</span>
+          <span class="pill">Built native for iOS and Android</span>
         </div>
       </section>
 
-      <!-- ACT 3 — PRODUCT TRIPTYCH -->
-      <section class="section container rule" id="product" data-chapter="product">
-        <div class="section-head">
-          <div data-reveal>
-            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The product, in three feelings</div>
-            <h2>Three screens. Three artifacts. One world.</h2>
-          </div>
-          <p class="lede" data-reveal>Most golf software feels like a dashboard. Golf Safari was built so each surface feels like a thing you'd hold — a broadsheet, a program, a yardage book.</p>
-        </div>
-        <div class="triptych">
-          <article class="pcard" data-sharp data-reveal>
-            <div class="pscreen"><img src="assets/screens/today.png" alt="The Morning Wire — Golf Safari Today screen" loading="lazy" /></div>
-            <div class="pmeta"><small>Today · The Morning Wire</small><strong>A broadsheet</strong><span>The day opens like a front page — rivalry, field, and the next move before the first tee.</span></div>
-          </article>
-          <article class="pcard mid" data-sharp data-reveal>
-            <div class="pscreen"><img src="assets/screens/compete.png" alt="The Tournament Program — Golf Safari Compete screen" loading="lazy" /></div>
-            <div class="pmeta"><small>Compete · The Tournament Program</small><strong>A program</strong><span>Fields, pairings, and weekly opens framed with the ceremony of a real event.</span></div>
-          </article>
-          <article class="pcard" data-sharp data-reveal>
-            <div class="pscreen"><img src="assets/screens/round.png" alt="The Yardage Book — Golf Safari Round screen" loading="lazy" /></div>
-            <div class="pmeta"><small>Round · The Yardage Book</small><strong>A yardage book</strong><span>On-course help that behaves like golf hardware, not abstract sports UI.</span></div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ACT 4 — JOURNEY (horizontal reel) -->
-      <section class="hz-zone" id="journey" data-chapter="journey" data-axis="horizontal">
+      <!-- ACT 3 — THE PRODUCT (one horizontal showcase: the real, current screens parade L→R) -->
+      <section class="hz-zone film-zone" id="screens" data-chapter="screens" data-axis="horizontal">
         <div class="hz-sticky">
-          <div class="hz-caption">How the product earned its voice</div>
+          <div class="hz-caption">The current app · swipe the club</div>
           <div class="hz-track">
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Then · The caddie</small><h3>It started as a caddie.</h3><p>Wind, club, lie, pin — intimate and precise, useful before it tried to be big.</p></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v1.png" alt="Early Golf Safari round screen" loading="lazy" /></figure></div>
+            <article class="hz-panel film-lead"><div class="film-intro">
+              <small>The product, today</small><h3>This already exists. Swipe through it.</h3><p>Every screen here is from the app that's live on the stores — not mockups or slide-deck renders. Take a look for yourself.</p>
             </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Next · The club</small><h3>It grew into a club.</h3><p>Fields, identity, belonging — the tool became something a community comes back to.</p></div>
-              <div class="hz-media"><figure class="hz-screen"><img src="assets/history/home-v3.png" alt="Golf Safari player identity history screen" loading="lazy" /></figure></div>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/today.png" alt="Golf Safari Today — The Morning Wire" loading="lazy" /></figure><figcaption class="film-cap"><small>Today · The Morning Wire</small><strong>The day opens like a front page.</strong><span>Rivalry, field, and the next move before the first tee.</span></figcaption></article>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/round.png" alt="Golf Safari Round — The Yardage Book" loading="lazy" /></figure><figcaption class="film-cap"><small>Round · The Yardage Book</small><strong>On-course help that feels like gear.</strong><span>Tactical, tactile, specific to the shot in front of you.</span></figcaption></article>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/compete.png" alt="Golf Safari Compete — The Tournament Program" loading="lazy" /></figure><figcaption class="film-cap"><small>Compete · The Tournament Program</small><strong>The event, with real ceremony.</strong><span>Fields, check-in, and club rhythm that feel official.</span></figcaption></article>
+            <article class="hz-panel film-lead"><div class="film-intro">
+              <small>The action · Wagers</small><h3>The bets are already wired in.</h3><p>Nassau, skins, the press — the side games live inside the round. The app carries the wager and the score, then deliberately leaves the settling, and the trash talk, to the group. Some things shouldn't be over-solved.</p>
             </div></article>
-            <article class="hz-panel"><div class="hz-inner">
-              <div class="hz-copy"><small>Now · The system</small><h3>Now it's a complete system.</h3><p>Wire, program, yardage book, record book, locker, 19th Hole — one golf experience.</p></div>
-              <div class="hz-media wide"><figure class="hz-desktop"><img src="assets/golf-safari-landing-desktop.png" alt="Golf Safari web front door" loading="lazy" /></figure></div>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/progress.png" alt="Golf Safari Progress — The Record Book" loading="lazy" /></figure><figcaption class="film-cap"><small>Progress · The Record Book</small><strong>Improvement you want to come back to.</strong><span>Safari Index, badges, the trail of where you've been.</span></figcaption></article>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/you.png" alt="Golf Safari You — The Locker Room" loading="lazy" /></figure><figcaption class="film-cap"><small>You · The Locker Room</small><strong>A real golf identity at the club.</strong><span>Profile, status, home course, the bag — not buried in settings.</span></figcaption></article>
+            <article class="hz-panel"><figure class="film-screen"><img src="assets/screens/nineteenth.png" alt="Golf Safari 19th Hole — after the round" loading="lazy" /></figure><figcaption class="film-cap"><small>19th Hole · After the round</small><strong>The round survives the last putt.</strong><span>The recap, the signed scorecard, the rivalries that stay alive.</span></figcaption></article>
+            <article class="hz-panel film-lead"><div class="film-intro">
+              <small>That's the product</small><h3>Every screen above is shipped and live.</h3><p>Keep scrolling — there's the builder behind it, where it's headed, and the one decision that starts it.</p>
             </div></article>
           </div>
           <div class="hz-progress"><i></i></div>
         </div>
         <!-- mobile swipe fallback -->
         <div class="reel-mobile">
-          <div class="rm-head"><small>How it grew</small><h3>Caddie → club → system.</h3><p>From one decisive screen to a complete golf experience.</p></div>
+          <div class="rm-head"><small>The product, today</small><h3>The current app, screen by screen.</h3><p>Every screen is live in the shipped app. Swipe through.</p></div>
           <div class="rm-rail">
-            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v1.png" alt="Early round screen" loading="lazy" /></div><strong>The caddie</strong><span>One golfer, one hole, one decision.</span></article>
-            <article class="rm-card"><div class="rm-shot"><img src="assets/history/home-v3.png" alt="Identity history" loading="lazy" /></div><strong>The club</strong><span>Identity and belonging.</span></article>
-            <article class="rm-card"><div class="rm-shot wide"><img src="assets/golf-safari-landing-desktop.png" alt="Web front door" loading="lazy" /></div><strong>The system</strong><span>One complete golf experience.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/today.png" alt="Today — The Morning Wire" loading="lazy" /></div><strong>The Morning Wire</strong><span>The day opens like a front page.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/round.png" alt="Round — The Yardage Book" loading="lazy" /></div><strong>The Yardage Book</strong><span>On-course help that feels like gear.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/compete.png" alt="Compete — The Tournament Program" loading="lazy" /></div><strong>The Tournament Program</strong><span>The event, with real ceremony.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/progress.png" alt="Progress — The Record Book" loading="lazy" /></div><strong>The Record Book</strong><span>Safari Index, badges, the trail.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/you.png" alt="You — The Locker Room" loading="lazy" /></div><strong>The Locker Room</strong><span>A real golf identity at the club.</span></article>
+            <article class="rm-card"><div class="rm-shot"><img src="assets/screens/nineteenth.png" alt="19th Hole — after the round" loading="lazy" /></div><strong>The 19th Hole</strong><span>The round survives the last putt.</span></article>
           </div>
-        </div>
-      </section>
-
-      <!-- ACT 5 — ARTIFACTS -->
-      <section class="section container rule" id="artifacts" data-chapter="artifacts">
-        <div class="section-head">
-          <div data-reveal>
-            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The current experience</div>
-            <h2>Six surfaces. Each one earns its place.</h2>
-          </div>
-          <p class="lede" data-reveal>Safari Golf doesn't need generic software. It needs a digital experience that reflects its own culture back to its members.</p>
-        </div>
-        <div class="artifact">
-          <div class="artifact-stage" data-reveal>
-            <div class="artifact-frame">
-              <figure class="artifact-screen"><img id="art-img" src="assets/screens/today.png" alt="Golf Safari artifact preview" /></figure>
-              <div class="artifact-cap"><small id="art-tab">Today</small><strong id="art-title">The Morning Wire</strong><p id="art-copy">A live daily briefing that turns the next round into a ritual — context, rivalry, and the next move before the first tee.</p></div>
-            </div>
-          </div>
-          <div class="artifact-steps">
-            <article class="astep is-active" data-img="assets/screens/today.png" data-tab="Today" data-title="The Morning Wire" data-copy="A live daily briefing that turns the next round into a ritual — context, rivalry, and the next move before the first tee.">
-              <small>01 · Today</small><h3>The Morning Wire</h3><p>The day opens like a premium golf front page, not a generic home screen.</p><em>Proves · daily ritual</em>
-            </article>
-            <article class="astep" data-img="assets/screens/round.png" data-tab="Round" data-title="The Yardage Book" data-copy="A round screen that behaves like golf hardware: tactical, tactile, and specific to the decision in front of the player.">
-              <small>02 · Round</small><h3>The Yardage Book</h3><p>Tactical help that feels like equipment, not abstract sports software.</p><em>Proves · on-course seriousness</em>
-            </article>
-            <article class="astep" data-img="assets/screens/compete.png" data-tab="Compete" data-title="The Tournament Program" data-copy="Fields, check-in, event state, and club rhythm get a proper home — with enough ceremony to feel official.">
-              <small>03 · Compete</small><h3>The Tournament Program</h3><p>Competition framed like an event that matters — because it does.</p><em>Proves · organizer value</em>
-            </article>
-            <article class="astep" data-img="assets/screens/progress.png" data-tab="Progress" data-title="The Record Book" data-copy="Progress becomes visible, memorable, and collectible instead of disappearing into utility stats.">
-              <small>04 · Progress</small><h3>The Record Book</h3><p>Improvement gets a physical-feeling home — Safari Index, badges, the trail.</p><em>Proves · a reason to return</em>
-            </article>
-            <article class="astep" data-img="assets/screens/you.png" data-tab="You" data-title="The Locker Room" data-copy="Profile, status, home course, and the bag are treated as part of the world — not buried in settings.">
-              <small>05 · You</small><h3>The Locker Room</h3><p>The player becomes legible — a golf identity with local meaning.</p><em>Proves · trust &amp; belonging</em>
-            </article>
-            <article class="astep" data-img="assets/screens/nineteenth.png" data-tab="19th Hole" data-title="The 19th Hole" data-copy="The round survives the last putt — recap, signed scorecard, rivalry, and social gravity stay alive after play ends.">
-              <small>06 · After the round</small><h3>The 19th Hole</h3><p>Community memory becomes part of the experience, not an afterthought.</p><em>Proves · culture retention</em>
-            </article>
-          </div>
+          <p class="stat-note" style="text-align:left;margin-top:18px">And the wagers — Nassau, skins, the press — live inside the round. The app carries the bet and the score, and leaves the settling, and the trash talk, to the group.</p>
         </div>
       </section>
 
@@ -480,12 +435,14 @@
         <div class="builder-grid">
           <div class="builder-copy" data-reveal>
             <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Who's behind it</div>
-            <h2>Built from inside the community.</h2>
-            <p>Golf Safari wasn't built by an outside vendor studying golf from a deck — it comes from inside the same Safari Golf Dallas world. <em>Safari</em> is the thread from Nairobi to the fairways of Dallas, and it's why the product feels like golf, not software with a golf skin.</p>
+            <h2>Enterprise-grade hands. A member's heart.</h2>
+            <p>This didn't come from an outside vendor reading about golf off a slide deck. It comes from someone inside this same Safari Golf world — a member who plays, knows the camaraderie, and has felt the bottlenecks firsthand.</p>
+            <p>The professional background is the part that should matter to Safari Golf Dallas. Years carrying enterprise software at <em>Microsoft</em> — selling servers and cloud from small business to midmarket to enterprise, including into Africa — then the same midmarket-to-enterprise work at <em>AWS</em>, then <em>TikTok</em>, across fashion, apparel, and brands in every kind of industry. That's a career spent learning how real infrastructure actually gets built, sold, and adopted at scale.</p>
+            <p>Golf Safari is that experience pointed at a place it's personal: building the custom tools for an organization he's watched run without them. The vision and the feel stay with the club. What the partnership adds is the engineering muscle to build the harder parts properly.</p>
             <div class="proofline">
-              <div class="pr"><b>2×</b><span><strong>Shipped, not promised.</strong> Native iOS &amp; Android, live at v4.0.6.</span></div>
-              <div class="pr"><b>6</b><span><strong>Bespoke surfaces.</strong> Every tab is its own artifact. Nothing default.</span></div>
-              <div class="pr"><b>1</b><span><strong>One standard.</strong> Product, web, and delivery — coherent as it grows.</span></div>
+              <div class="pr"><b>MSFT<br/>AWS<br/>TikTok</b><span><strong>Enterprise software pedigree.</strong> SMB to enterprise infrastructure, now pointed at the club.</span></div>
+              <div class="pr"><b>2×</b><span><strong>Shipped, not promised.</strong> Native iOS and Android, live on both stores.</span></div>
+              <div class="pr"><b>1</b><span><strong>A member, not a vendor.</strong> Inside the group, on the course, and behind the build.</span></div>
             </div>
           </div>
           <figure class="builder-photo ph solo" data-reveal><img src="assets/dallas/IMG_3419.jpg" alt="Safari Golf Dallas members on the course" loading="lazy" /></figure>
@@ -503,7 +460,24 @@
           <div class="stat"><b>2</b><span>Native apps<br/>iOS &amp; Android</span></div>
           <div class="stat"><b>55<em>+</em></b><span>QA runs<br/>before release</span></div>
         </div>
-        <p class="stat-note" data-reveal>This didn't arrive in a sprint. Golf Safari was rebuilt from a retired prototype into a native product — broken and rebuilt across dozens of store builds until it held a standard worth standing behind. <em>That discipline is what the partnership brings forward.</em></p>
+        <p class="stat-note" data-reveal>This didn't come together in a weekend. Golf Safari was rebuilt from a retired prototype into a native product, broken and rebuilt across dozens of store builds until it was solid enough to stand behind. <em>That's the work the partnership brings with it.</em></p>
+      </section>
+
+      <!-- ACT 6c — THE 19TH HOLE VISION (honest: the part not yet built) -->
+      <section class="section container rule" id="vision" data-chapter="vision">
+        <div class="section-head">
+          <div data-reveal>
+            <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> The part we haven't finished</div>
+            <h2>The 19th Hole is where it's headed.</h2>
+          </div>
+          <p class="lede" data-reveal>Today it's the recap and the signed scorecard. The real idea is bigger — and we'd rather be straight about it: this is the work the partnership is for.</p>
+        </div>
+        <div class="own-grid">
+          <article class="pccard step" data-reveal><small>The idea</small><strong>Where's the group going after the round?</strong><p>An assistant settles it between the players and books the spot — no group-chat back-and-forth.</p></article>
+          <article class="pccard step" data-reveal><small>The reward</small><strong>Show up with your Safari Index, get looked after.</strong><p>Members arrive recognized, with a perk for using Safari to get there.</p></article>
+          <article class="pccard step" data-reveal><small>The room</small><strong>Open it up, or keep it private.</strong><p>See where people are landing if you're not playing that day — or close the door and keep it to your group.</p></article>
+        </div>
+        <p class="stat-note" data-reveal>The founder started this, then parked it — it needs real engineering, not just a good idea. <em>That's exactly what the partnership funds.</em></p>
       </section>
 
       <!-- ACT 7 — WHAT THE PARTNERSHIP UNLOCKS -->
@@ -513,11 +487,11 @@
             <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> What it unlocks</div>
             <h2>What the partnership opens up.</h2>
           </div>
-          <p class="lede" data-reveal>One standard, three moves — start in Dallas, then carry it across Safari.</p>
+          <p class="lede" data-reveal>Not a one-off build. A living platform that grows with the technology — and pulls everything Ni Biashara learns back to the club.</p>
         </div>
         <div class="own-grid">
-          <article class="pccard step" data-reveal><small>Now · Dallas</small><strong>The official digital home of Safari Golf Dallas.</strong><p>The daily brief, the live field, tournaments — one place the club runs on.</p></article>
-          <article class="pccard step" data-reveal><small>Next · The full experience</small><strong>Website, member identity, and sponsor-ready premium.</strong><p>Every touchpoint, on and off the course, under one standard.</p></article>
+          <article class="pccard step" data-reveal><small>Step one · Dallas</small><strong>The official digital home of Safari Golf Dallas.</strong><p>The app, the website, the daily brief, the live field, the tournaments — one optimized web presence the organization runs on.</p></article>
+          <article class="pccard step" data-reveal><small>It compounds · Every release</small><strong>It grows as the technology grows.</strong><p>New tools, new AI, new touchpoints — whatever Ni Biashara builds as a business flows back into the club's platform.</p></article>
           <article class="pccard step" data-reveal><small>Then · Across Safari</small><strong>The same standard, the next organization.</strong><p>Prove it in Dallas, then carry it to the next Safari chapter — and the next.</p></article>
         </div>
       </section>
@@ -529,7 +503,7 @@
             <div class="eyebrow"><span class="kmark" aria-hidden="true"><i></i><i></i><i></i></span> Why Ni Biashara</div>
             <h2>The right partner makes Safari Golf feel complete.</h2>
           </div>
-          <p class="lede" data-reveal>A partner that holds the product standard, the website, and the delivery — without flattening what makes it special.</p>
+          <p class="lede" data-reveal>A partner that holds the product standard, the website, and the delivery without flattening what makes it special.</p>
         </div>
         <div class="proof-grid">
           <div class="proof-hero" data-reveal>
@@ -543,8 +517,8 @@
           </div>
           <div class="proof-rail">
             <article class="pccard" data-reveal><small>One partner</small><strong>Product, website, and the wider Safari Golf presence under one standard.</strong></article>
-            <article class="pccard" data-reveal><small>Design judgment</small><strong>We expand what makes the product distinctive — never sand it into generic sports software.</strong></article>
-            <article class="pccard" data-reveal><small>Delivery</small><strong>Ideas become working experiences, polished details, and verified quality.</strong></article>
+            <article class="pccard" data-reveal><small>Design judgment</small><strong>We build on what makes the product distinctive instead of flattening it into generic sports software.</strong></article>
+            <article class="pccard" data-reveal><small>Delivery</small><strong>We turn ideas into working software, finish the details, and test it before it ships.</strong></article>
           </div>
         </div>
       </section>
@@ -552,7 +526,7 @@
       <!-- ACT 9 — CLOSE -->
       <section class="section container" id="next" data-chapter="next">
         <div class="close" data-reveal>
-          <div class="close-photo" aria-hidden="true"><img src="assets/dallas/IMG_5728.jpg" alt="" loading="lazy" /></div>
+          <div class="close-photo" aria-hidden="true"><img src="assets/hero-sunrise.jpg" alt="" loading="lazy" /></div>
           <div class="close-inner">
             <div>
               <small>Next step</small>
